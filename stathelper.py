@@ -1,6 +1,14 @@
 import numpy as np
 import copy
 
+"""Statistical Helper Functions"""
+
+
+"""
+
+Functions for samples grouped by categorical variable
+
+"""
 def obtain_variable_matrix_from_different_samples(grouped_df_structure, sample_size : int):
     grouped_list = list(grouped_df_structure)
 
@@ -54,3 +62,11 @@ def obtain_E_and_H_matrices(variable_list : list, means_matrix : np.array):
                 H_matrix[i,j] += np.dot((means_matrix[k,i] - overall_mean_vector[i]), (means_matrix[k,j] - overall_mean_vector[j])) * variable_list[0].shape[0]
 
     return (E_matrix, H_matrix)
+
+"""
+
+Functions for one sample
+
+"""
+
+
